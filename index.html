@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C.T.O. — Commandement Tactique Opérationnel</title>
+<meta name="description" content="Commandement Tactique Opérationnel — les derniers éléments actifs des anciennes forces gouvernementales. Nous tenons la ligne pendant que le monde s'effondre.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Oswald:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="grain-overlay" aria-hidden="true"></div>
+<div class="scanline-overlay" aria-hidden="true"></div>
+<canvas id="ash-canvas" aria-hidden="true"></canvas>
+
+<div id="boot-screen">
+  <div class="boot-lines" id="boot-lines"></div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="site-nav" id="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-brand">
+      <span class="brand-mark">☠</span>
+      <span class="brand-text">C.T.O.</span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#origine" data-nav>Origine</a>
+      <a href="#doctrine" data-nav>Doctrine</a>
+      <a href="#hierarchie" data-nav>Hiérarchie</a>
+      <a href="#unites" data-nav>Divisions</a>
+      <a href="#missions" data-nav>Missions</a>
+      <a href="#menaces" data-nav>Menaces</a>
+      <a href="#recrutement" data-nav>Recrutement</a>
+      <a href="#contact" data-nav>Contact</a>
+    </nav>
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span>LIAISON ACTIVE</span>
+    </div>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="top" class="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="radar" aria-hidden="true">
+    <div class="radar-sweep"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-tag mono">DOSSIER // NIVEAU D'ACCÈS : PUBLIC</div>
+    <div class="emblem">
+      <svg viewBox="0 0 200 220" class="emblem-svg">
+        <polygon points="100,4 190,50 190,140 100,216 10,140 10,50" class="emblem-shape"/>
+        <polygon points="100,20 174,58 174,132 100,198 26,132 26,58" class="emblem-inner"/>
+        <text x="100" y="118" text-anchor="middle" class="emblem-text">CTO</text>
+        <line x1="45" y1="75" x2="155" y2="75" class="emblem-line"/>
+        <line x1="45" y1="145" x2="155" y2="145" class="emblem-line"/>
+      </svg>
+    </div>
+    <h1 class="hero-title">COMMANDEMENT<br>TACTIQUE OPÉRATIONNEL</h1>
+    <p class="hero-devise mono"><span id="typed-devise"></span><span class="cursor">_</span></p>
+
+    <div class="hero-cta">
+      <a href="https://cfx.re/join/maz4ka" target="_blank" rel="noopener" class="btn btn-primary">
+        <span>⯈ Rejoindre le serveur</span>
+      </a>
+      <a href="https://discord.gg/dayofdecay" target="_blank" rel="noopener" class="btn btn-ghost">
+        <span>Discord officiel</span>
+      </a>
+    </div>
+
+    <div class="hero-scroll mono">DÉFILER // BRIEFING COMPLET ▾</div>
+  </div>
+
+  <div class="statbar">
+    <div class="stat">
+      <div class="stat-num" data-count="4">0</div>
+      <div class="stat-label mono">divisions opérationnelles</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-count="11">0</div>
+      <div class="stat-label mono">grades hiérarchiques</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-count="8">0</div>
+      <div class="stat-label mono">types de missions</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num" data-infinite="1">0</div>
+      <div class="stat-label mono">survivants à protéger</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ORIGINE ============ -->
+<section id="origine" class="section">
+  <div class="section-head reveal">
+    <span class="dossier-num mono">DOSSIER 01</span>
+    <h2>Origine &amp; Présentation</h2>
+  </div>
+
+  <div class="origin-grid">
+    <div class="origin-text reveal">
+      <p>Le CTO est une organisation militaire composée des <strong>derniers éléments actifs</strong> des anciennes forces gouvernementales. Suite à l'effondrement des structures étatiques et à la disparition des autorités, la majorité des unités militaires ont cessé leurs activités.</p>
+      <p>Certains soldats ont abandonné leurs fonctions, d'autres ont rejoint des groupes de survivants, et quelques-uns ont continué à appliquer leurs missions malgré l'absence de commandement officiel. Le CTO est né de cette dernière volonté — préserver ce qui peut encore l'être, plutôt que de reconstruire une armée de contrôle mondial.</p>
+      <p>Progressivement, des recrues ont rejoint les rangs, des unités spécialisées ont été créées, une chaîne de commandement a été reconstruite — transformant cette initiative en véritable organisation structurée.</p>
+    </div>
+
+    <div class="classified-card reveal">
+      <div class="classified-header mono">
+        <span>FICHE PERSONNEL — ACCÈS RESTREINT</span>
+        <span class="classified-stamp">CLASSIFIÉ</span>
+      </div>
+      <div class="classified-body">
+        <p class="classified-line mono">NOM DE GUERRE : <span class="redact" tabindex="0">Le Sanguinaire</span></p>
+        <p class="classified-line mono">STATUT : <span class="redact" tabindex="0">Fondateur — Actif</span></p>
+        <p class="classified-line mono">ORIGINE : <span class="redact" tabindex="0">Forces gouvernementales</span></p>
+        <p class="classified-quote">« Un seul homme a refusé d'abandonner la mission initiale et a commencé à rassembler les survivants capables de fonctionner sous une structure organisée. »</p>
+        <p class="classified-hint mono">▸ survolez les lignes redactées</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOCTRINE / PHILOSOPHIE ============ -->
+<section id="doctrine" class="section section-alt">
+  <div class="section-head reveal">
+    <span class="dossier-num mono">DOSSIER 02</span>
+    <h2>Doctrine &amp; Valeurs</h2>
+  </div>
+
+  <p class="doctrine-lead reveal">« La civilisation peut avoir disparu, mais le devoir n'a pas disparu avec elle. » La survie ne doit pas être uniquement individuelle, mais collective. Connaissances, ressources, infrastructures et survivants doivent être protégés pour permettre à l'humanité de continuer.</p>
+
+  <div class="values-row reveal">
+    <div class="value-chip"><span class="value-icon">⚙</span>Discipline</div>
+    <div class="value-chip"><span class="value-icon">🛡</span>Protection</div>
+    <div class="value-chip"><span class="value-icon">⛓</span>Cohésion</div>
+    <div class="value-chip"><span class="value-icon">✚</span>Survie</div>
+    <div class="value-chip"><span class="value-icon">▲</span>Reconstruction</div>
+  </div>
+
+  <h3 class="subhead reveal">Objectifs permanents</h3>
+  <div class="objectives-grid">
+    <div class="obj-card reveal"><span class="obj-icon">🛡</span><h4>Protection</h4><p>Protéger les survivants lorsque cela est possible.</p></div>
+    <div class="obj-card reveal"><span class="obj-icon">🏕</span><h4>Sécurisation</h4><p>Sécuriser refuges, points de ravitaillement et bases opérationnelles.</p></div>
+    <div class="obj-card reveal"><span class="obj-icon">🧭</span><h4>Reconnaissance</h4><p>Explorer les territoires inconnus et identifier les dangers.</p></div>
+    <div class="obj-card reveal"><span class="obj-icon">📡</span><h4>Renseignement</h4><p>Collecter et analyser les informations sur groupes, zones et menaces.</p></div>
+    <div class="obj-card reveal"><span class="obj-icon">🧪</span><h4>Recherche</h4><p>Comprendre les phénomènes de contaminations et mutations.</p></div>
+    <div class="obj-card reveal"><span class="obj-icon">⚕</span><h4>Assistance médicale</h4><p>Soigner les membres et survivants selon les moyens disponibles.</p></div>
+    <div class="obj-card reveal"><span class="obj-icon">📦</span><h4>Récupération</h4><p>Récupérer ressources, équipements, documents et technologies.</p></div>
+    <div class="obj-card reveal"><span class="obj-icon">⚖</span><h4>Maintien de l'ordre</h4><p>Limiter les conflits inutiles et maintenir la stabilité.</p></div>
+  </div>
+</section>
+
+<!-- ============ HIÉRARCHIE ============ -->
+<section id="hierarchie" class="section section-alt">
+  <div class="section-head reveal">
+    <span class="dossier-num mono">DOSSIER 03</span>
+    <h2>Hiérarchie &amp; Commandement</h2>
+  </div>
+  <p class="doctrine-lead reveal">« Une chaîne de commandement existe pour que chaque décision ait un responsable et que chaque membre sache où se tourner. »</p>
+
+  <div class="rank-ladder">
+    <div class="rank-tier reveal">
+      <div class="rank-tier-label mono">01 — HAUT COMMANDEMENT</div>
+      <div class="rank-names">
+        <span class="rank-name rank-top">Commandant du CTO</span>
+        <span class="rank-name rank-top">Colonel</span>
+        <span class="rank-name rank-top">Lieutenant-Colonel</span>
+      </div>
+      <p class="rank-quote">« Le dernier mot appartient au commandement. La responsabilité aussi. »</p>
+    </div>
+    <div class="rank-tier reveal">
+      <div class="rank-tier-label mono">02 — ÉTAT-MAJOR</div>
+      <div class="rank-names"><span class="rank-name">Major</span></div>
+      <p class="rank-quote">« Une décision efficace commence par une information correcte. »</p>
+    </div>
+    <div class="rank-tier reveal">
+      <div class="rank-tier-label mono">03 — OFFICIERS</div>
+      <div class="rank-names">
+        <span class="rank-name">Capitaine</span><span class="rank-name">Lieutenant</span>
+      </div>
+      <p class="rank-quote">« Sur le terrain, chaque décision compte. »</p>
+    </div>
+    <div class="rank-tier reveal">
+      <div class="rank-tier-label mono">04 — SOUS-OFFICIERS</div>
+      <div class="rank-names">
+        <span class="rank-name">Adjudant</span><span class="rank-name">Sergent</span><span class="rank-name">Caporal</span>
+      </div>
+      <p class="rank-quote">« Une équipe efficace commence par une équipe soudée. »</p>
+    </div>
+    <div class="rank-tier reveal">
+      <div class="rank-tier-label mono">05 — PERSONNEL OPÉRATIONNEL</div>
+      <div class="rank-names"><span class="rank-name">Opérateur</span></div>
+      <p class="rank-quote">« Ils sont ceux qui tiennent la ligne. »</p>
+    </div>
+    <div class="rank-tier reveal">
+      <div class="rank-tier-label mono">06 — FORMATIONS</div>
+      <div class="rank-names"><span class="rank-name rank-recruit">Recrue</span></div>
+      <p class="rank-quote">« Chaque membre expérimenté a un jour été une recrue. »</p>
+    </div>
+  </div>
+
+  <div class="transmission-chain reveal">
+    <span class="tc-label mono">CHAÎNE DE TRANSMISSION</span>
+    <div class="tc-flow mono">
+      <span>Recrue</span><span class="tc-arrow">→</span>
+      <span>Opérateur</span><span class="tc-arrow">→</span>
+      <span>Sous-Officier</span><span class="tc-arrow">→</span>
+      <span>Officier</span><span class="tc-arrow">→</span>
+      <span>État-Major</span><span class="tc-arrow">→</span>
+      <span>Haut Commandement</span>
+    </div>
+  </div>
+
+  <h3 class="subhead reveal" style="text-align:center;">Principes de commandement</h3>
+  <div class="principles-row reveal">
+    <div class="principle-card">
+      <span class="principle-icon">◎</span>
+      <h4>Donner l'exemple</h4>
+      <p>Un responsable doit respecter les règles qu'il demande aux autres de respecter.</p>
+    </div>
+    <div class="principle-card">
+      <span class="principle-icon">✚</span>
+      <h4>Assumer</h4>
+      <p>Un responsable doit être capable d'assumer ses décisions.</p>
+    </div>
+    <div class="principle-card">
+      <span class="principle-icon">🛡</span>
+      <h4>Protéger</h4>
+      <p>L'autorité sert le fonctionnement et la protection de l'organisation, non des intérêts personnels.</p>
+    </div>
+  </div>
+  <p class="threat-note reveal">« Le grade donne une responsabilité. Le comportement donne le respect. »</p>
+</section>
+
+<!-- ============ UNITÉS / SPÉCIALISATIONS ============ -->
+<section id="unites" class="section">
+  <div class="section-head reveal">
+    <span class="dossier-num mono">DOSSIER 04</span>
+    <h2>Divisions &amp; Spécialisations</h2>
+  </div>
+  <p class="doctrine-lead reveal">Le grade détermine le niveau de responsabilité. La spécialisation détermine le domaine d'activité. Deux logiques distinctes, un seul objectif commun.</p>
+
+  <h3 class="subhead reveal">Fonctions transversales</h3>
+  <div class="functions-row">
+    <article class="function-card reveal">
+      <span class="unit-icon">🎖</span>
+      <h4>Recruteur</h4>
+      <p>Identifie, accueille et accompagne les candidats souhaitant rejoindre le CTO. Premier contact avec l'organisation.</p>
+    </article>
+    <article class="function-card reveal">
+      <span class="unit-icon">📘</span>
+      <h4>Instructeur</h4>
+      <p>Forme les membres, enseigne les protocoles et prépare recrues comme opérateurs aux opérations.</p>
+    </article>
+    <article class="function-card reveal">
+      <span class="unit-icon">🧰</span>
+      <h4>Logisticien</h4>
+      <p>Gère stocks, inventaire, distribution des équipements et ravitaillement des divisions.</p>
+    </article>
+  </div>
+
+  <h3 class="subhead reveal">Divisions opérationnelles</h3>
+  <div class="units-grid">
+    <article class="unit-card unit-assault reveal">
+      <div class="unit-top">
+        <span class="unit-icon">⚔</span>
+        <span class="unit-code mono">DIV-01</span>
+      </div>
+      <h3>Division d'Assaut</h3>
+      <p>Principale force d'intervention du CTO. Agit lors des opérations nécessitant une présence renforcée : sécurisation, protection, extraction, défense des installations.</p>
+      <div class="unit-tags">
+        <span>Discipline</span><span>Sang-froid</span><span>Esprit d'équipe</span><span>Procédures</span>
+      </div>
+    </article>
+
+    <article class="unit-card unit-medic reveal">
+      <div class="unit-top">
+        <span class="unit-icon">⚕</span>
+        <span class="unit-code mono">DIV-02</span>
+      </div>
+      <h3>Division Médicale</h3>
+      <p>Soins d'urgence, prise en charge des blessés, gestion du matériel médical, prévention des contaminations et mise en quarantaine.</p>
+      <div class="unit-tags">
+        <span>Confidentialité</span><span>Suivi sanitaire</span><span>Terrain</span><span>Prévention</span>
+      </div>
+    </article>
+
+    <article class="unit-card unit-intel reveal">
+      <div class="unit-top">
+        <span class="unit-icon">🗂</span>
+        <span class="unit-code mono">DIV-03</span>
+      </div>
+      <h3>Division de Renseignement</h3>
+      <p>Recherche, vérifie et analyse les informations utiles : observation des groupes extérieurs, suivi des zones, identification des menaces.</p>
+      <div class="unit-tags">
+        <span>Fait confirmé</span><span>Témoignage</span><span>Hypothèse</span><span>À vérifier</span>
+      </div>
+    </article>
+
+    <article class="unit-card unit-science reveal">
+      <div class="unit-top">
+        <span class="unit-icon">🧬</span>
+        <span class="unit-code mono">DIV-04</span>
+      </div>
+      <h3>Division Scientifique</h3>
+      <p>Étudie les infectés, mutations, contaminations et phénomènes radiologiques. Intervient en laboratoires, hôpitaux et zones contaminées.</p>
+      <div class="unit-tags">
+        <span>Échantillons</span><span>Documentation</span><span>Analyse</span><span>Coordination DIV-02/01</span>
+      </div>
+    </article>
+  </div>
+
+  <div class="coop-note reveal">
+    <p><strong>Coopération inter-divisions :</strong> une exploration en zone contaminée mobilise typiquement le Renseignement (informations), la Division Scientifique (analyse), la Division Médicale (sécurité sanitaire), la Division d'Assaut (protection) et la Logistique (matériel) — simultanément.</p>
+  </div>
+</section>
+
+<!-- ============ MISSIONS ============ -->
+<section id="missions" class="section section-alt">
+  <div class="section-head reveal">
+    <span class="dossier-num mono">DOSSIER 05</span>
+    <h2>Types de Missions</h2>
+  </div>
+
+  <div class="missions-grid">
+    <div class="mission-item reveal"><span class="mono mission-idx">01</span><div><h4>Reconnaissance</h4><p>Observation de zones, identification des dangers, transmission des observations.</p></div></div>
+    <div class="mission-item reveal"><span class="mono mission-idx">02</span><div><h4>Récupération</h4><p>Recherche de matériel, ressources, médicaments, documents ou équipements utiles.</p></div></div>
+    <div class="mission-item reveal"><span class="mono mission-idx">03</span><div><h4>Escorte</h4><p>Accompagnement de survivants ou sécurisation du déplacement de ressources.</p></div></div>
+    <div class="mission-item reveal"><span class="mono mission-idx">04</span><div><h4>Protection</h4><p>Protection de bases, campements, personnes ou zones stratégiques.</p></div></div>
+    <div class="mission-item reveal"><span class="mono mission-idx">05</span><div><h4>Scientifique</h4><p>Enquête sur les phénomènes inconnus, infections et mutations.</p></div></div>
+    <div class="mission-item reveal"><span class="mono mission-idx">06</span><div><h4>Médicale</h4><p>Intervention auprès des blessés et suivi sanitaire des membres.</p></div></div>
+    <div class="mission-item reveal"><span class="mono mission-idx">07</span><div><h4>Renseignement</h4><p>Collecte d'informations sur les autres groupes, territoires et événements.</p></div></div>
+    <div class="mission-item reveal"><span class="mono mission-idx">08</span><div><h4>Urgence</h4><p>Mobilisation des unités disponibles lors d'événements majeurs.</p></div></div>
+  </div>
+</section>
+
+<!-- ============ MENACES ============ -->
+<section id="menaces" class="section section-threat">
+  <div class="section-head reveal">
+    <span class="dossier-num mono">DOSSIER 06 // PRIORITÉ HAUTE</span>
+    <h2>Analyse des Menaces</h2>
+  </div>
+
+  <div class="threats-grid">
+    <div class="threat-chip reveal">Infectés</div>
+    <div class="threat-chip reveal">Zones contaminées</div>
+    <div class="threat-chip reveal">Mutations</div>
+    <div class="threat-chip reveal">Groupes hostiles</div>
+    <div class="threat-chip reveal">Conflits entre survivants</div>
+    <div class="threat-chip reveal">Pénuries</div>
+    <div class="threat-chip reveal">Phénomènes inconnus</div>
+    <div class="threat-chip reveal">Infrastructures dangereuses</div>
+  </div>
+
+  <div class="alert-box reveal">
+    <div class="alert-header mono">
+      <span class="alert-icon">⚠</span> ALERTE PRIORITAIRE — INFECTÉS DE TYPE FUMIGÈNE
+    </div>
+    <p>Les recherches de l'Unité Scientifique ont permis d'identifier plusieurs évolutions inquiétantes chez les infectés, liées aux anciennes zones contaminées et à l'exposition aux radiations. Les infectés de <strong>type fumigène</strong> constituent une menace particulièrement préoccupante, capables de produire une fumée sombre réduisant la visibilité et présentant potentiellement un danger toxique ou radiologique.</p>
+    <p class="alert-footer mono">L'étude de ces mutations est classée priorité scientifique absolue.</p>
+  </div>
+
+  <p class="threat-note reveal">Le CTO ne considère pas toutes les personnes extérieures comme des ennemis — la situation doit être évaluée avant toute décision.</p>
+</section>
+
+<!-- ============ DIPLOMATIE ============ -->
+<section class="section">
+  <div class="section-head reveal">
+    <span class="dossier-num mono">DOSSIER 07</span>
+    <h2>Survivants &amp; Relations Extérieures</h2>
+  </div>
+  <p class="doctrine-lead reveal">Le CTO cherche à maintenir des relations avec les survivants indépendants : assistance, informations, escortes, négociations, accords. La confiance n'est jamais acquise — les relations évoluent selon les événements du serveur.</p>
+
+  <div class="relations-row reveal">
+    <span class="rel-pill rel-good">Alliance</span>
+    <span class="rel-pill rel-good">Accord commercial</span>
+    <span class="rel-pill rel-good">Coopération</span>
+    <span class="rel-pill rel-neutral">Négociation</span>
+    <span class="rel-pill rel-neutral">Neutralité</span>
+    <span class="rel-pill rel-bad">Rivalité</span>
+    <span class="rel-pill rel-bad">Conflit</span>
+  </div>
+</section>
+
+<!-- ============ RECRUTEMENT ============ -->
+<section id="recrutement" class="section section-alt">
+  <div class="section-head reveal">
+    <span class="dossier-num mono">DOSSIER 08</span>
+    <h2>Recrutement &amp; Formation</h2>
+  </div>
+
+  <p class="doctrine-lead reveal">Le CTO ne cherche pas uniquement des combattants. Toute personne capable d'apporter quelque chose peut avoir une utilité.</p>
+
+  <div class="profiles-row reveal">
+    <span class="profile-tag">Combattants</span>
+    <span class="profile-tag">Éclaireurs</span>
+    <span class="profile-tag">Médecins</span>
+    <span class="profile-tag">Scientifiques</span>
+    <span class="profile-tag">Mécaniciens</span>
+    <span class="profile-tag">Logisticiens</span>
+    <span class="profile-tag">Spécialistes Renseignement</span>
+    <span class="profile-tag">Compétences particulières</span>
+  </div>
+
+  <div class="timeline reveal">
+    <div class="timeline-step">
+      <div class="tl-dot">1</div>
+      <h4>Candidature</h4>
+      <p>Premier contact avec le commandement, présentation du profil.</p>
+    </div>
+    <div class="timeline-step">
+      <div class="tl-dot">2</div>
+      <h4>Intégration</h4>
+      <p>Vérification de la capacité à respecter les règles et travailler en équipe.</p>
+    </div>
+    <div class="timeline-step">
+      <div class="tl-dot">3</div>
+      <h4>Protocoles</h4>
+      <p>Compréhension des protocoles, communication et confidentialité.</p>
+    </div>
+    <div class="timeline-step">
+      <div class="tl-dot">4</div>
+      <h4>Spécialisation</h4>
+      <p>Orientation vers une unité selon compétences et besoins du CTO.</p>
+    </div>
+    <div class="timeline-step">
+      <div class="tl-dot">5</div>
+      <h4>Affectation</h4>
+      <p>Participation active aux opérations sur le terrain.</p>
+    </div>
+  </div>
+
+  <div class="recruit-cta reveal">
+    <a href="https://discord.gg/dayofdecay" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Déposer ma candidature sur Discord</a>
+  </div>
+</section>
+
+<!-- ============ CITATION FINALE ============ -->
+<section class="section quote-section">
+  <div class="quote-block reveal">
+    <p class="quote-main">« Nous tenons la ligne<br>pendant que le monde s'effondre. »</p>
+    <p class="quote-sub">Tant qu'il restera quelqu'un à protéger,<br>le CTO aura une raison d'exister.</p>
+  </div>
+</section>
+
+<!-- ============ CONTACT / FOOTER ============ -->
+<footer id="contact" class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark">☠</span>
+      <span class="brand-text">C.T.O.</span>
+      <p class="mono footer-sub">Discipline — Protection — Cohésion — Survie — Reconstruction</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://discord.gg/dayofdecay" target="_blank" rel="noopener">Discord</a>
+      <a href="https://cfx.re/join/maz4ka" target="_blank" rel="noopener">Rejoindre (FiveM)</a>
+      <a href="https://dayofdecay.fr/" target="_blank" rel="noopener">Day of Decay</a>
+      <a href="https://www.tiktok.com/@dayofdecay_rp" target="_blank" rel="noopener">TikTok</a>
+    </div>
+
+    <p class="footer-note mono">Page communautaire non-officielle — Univers Day of Decay (FiveM RP)</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
